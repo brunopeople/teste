@@ -1,0 +1,53 @@
+[
+  {
+    "memberList": [
+      {
+        "league": {
+          "name": "Lasombra",
+          "id": 1,
+          "iconUrls": "http://localhost:8100"
+        },
+        "tag": "Lannister",
+        "name": "Peter Dinklage",
+        "role": "Leader",
+        "expLevel": "15",
+        "clanRank": "110001",
+        "previousClanRank": "110000",
+        "donations": "10000",
+        "donationsReceived": "10000000",
+        "trophies": "10",
+        "versusTrophies": "10"
+      }
+    ],
+    "tag": "Draculinho",
+    "requiredTrophies": 10,
+    "warFrequency": "warWins",
+    "clanLevel": 10,
+    "warWinStreak": 10,
+    "warWins": 10,
+    "warTies": 10,
+    "warLosses": 0,
+    "isWarLogPublic": true,
+    "clanPoints":10,
+    "clanVersusPoints": 10,
+    "labels": [
+      {
+        "name": "sei lá!",
+        "id": 20,
+        "iconUrls": "http://localhost:2100"
+      }
+    ],
+    "name": "sei lá",
+    "location": {
+      "localizedName": "sei la",
+      "id": 20,
+      "name": "sei lá",
+      "isCountry": true,
+      "countryCode": "55"
+    },
+    "type": "sei lá",
+    "members": 110,
+    "description": "string",
+    "badgeUrls": {}
+  }
+]

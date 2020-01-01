@@ -3,19 +3,27 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { JogadoresComponent } from './jogadores/jogadores.component';
-import {JogadorService} from './jogador.service';
-import {HttpClientModule} from '@angular/common/http';
+import { JogadorService} from './jogador.service';
+import { HttpClientModule} from '@angular/common/http';
+import { JogadorAddComponent } from './jogador-add/jogador-add.component';
+import { JogadorGetComponent } from './jogador-get/jogador-get.component';
+import { JogadorEditComponent } from './jogador-edit/jogador-edit.component';
+import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    JogadoresComponent
+    JogadorAddComponent,
+    JogadorGetComponent,
+    JogadorEditComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    SlimLoadingBarModule,
+    ReactiveFormsModule
   ],
   providers: [
   JogadorService
