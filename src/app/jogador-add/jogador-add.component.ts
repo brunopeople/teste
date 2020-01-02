@@ -19,12 +19,12 @@ export class JogadorAddComponent implements OnInit {
   	this.angForm = this.fb.group({
   		TagJogador:['', Validators.required],
   		Clan:['', Validators.required],
-  		Ranking:['', Validators.required],
+  		Ranking:['', Validators.required]
   	});
   }
 
-  adicionarJogadores(TagJogador, Clan, Ranking){
-  	this.js.adicionarJogadores(TagJogador, Clan, Ranking);
+  addJogador(TagJogador, Clan, Ranking){
+  	this.js.addJogador(TagJogador, Clan, Ranking);
   }
 
   ngOnInit() {
