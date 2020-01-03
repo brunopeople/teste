@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormGroup, FormBuilder, Validators} from '@angular/forms';
-import { ActivedRoute, Router} from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import {JogadorService} from '../jogador.service';
 
 @Component({
@@ -13,15 +13,18 @@ export class JogadorEditComponent implements OnInit {
 	angForm: FormGroup;
 	jogador: any = {};
 
-  constructor(private route: ActivedRoute, private router: Router, private js: JogadorService, private fb: FormBuilder) {
+  constructor(private route:  ActivatedRoute, 
+    private router: Router, 
+    private js: JogadorService, 
+    private fb: FormBuilder) {
   	this.createForm();
    }
 
    createForm(){
    	this.angForm = this.fb.group({
-   		TagJogador:['', Validators.required],
-   		Clan:['',Validators.required],
-   		Ranking:['', Validators.required]
+   		TagJogador: ['', Validators.required],
+   		Clan: ['', Validators.required],
+   		Ranking: ['', Validators.required]
    	});
    }
 
@@ -32,8 +35,9 @@ export class JogadorEditComponent implements OnInit {
   			this.jogador = res;
   		});
   	});
+  }
 
-  	updateJogador(TagJogador, Clan, Ranking, id){
+  	updateJogador(TagJogador, Clan, Ranking, id) {
   		this.route.params.subscribe(params => {
   			this.js.updateJogador(TagJogador, Clan, Ranking, params.id);
   			this.router.navigate(['products']);

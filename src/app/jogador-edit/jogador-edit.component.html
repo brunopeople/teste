@@ -1,1 +1,48 @@
-<p>jogador-edit works!</p>
+<div class="card">
+  <div class="card-body">
+    <form [formGroup]="angForm" novalidate>
+      <div class="form-group">
+        <label class="col-md-4">Tag Jogador</label>
+        <input type="text" class="form-control" 
+          formControlName="TagJogador" 
+          #TagJogador 
+          [(ngModel)] = "jogador.TagJogador"/>
+      </div>
+      <div *ngIf="angForm.controls['TagJogador'].invalid && (angForm.controls['TagJogador'].dirty || angForm.controls['TagJogador'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['TagJogador'].errors.required">
+          Tag do Jogador  é  requisitada!.
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">Clan </label>
+        <textarea class="form-control" rows = 5 cols = "5"
+        formControlName="Clan" 
+        #Clan [(ngModel)] = "jogador.Clan"></textarea>
+      </div>
+      <div *ngIf="angForm.controls['Clan'].invalid && (angForm.controls['Clan'].dirty || angForm.controls['Clan'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['Clan'].errors.required">
+          O Clan dos Jogador é Requisitado!.
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">Ranking</label>
+        <input type="text" class="form-control" 
+          formControlName="Ranking" 
+          #Ranking
+          [(ngModel)] = "jogador.Ranking"
+        />
+      </div>
+      <div *ngIf="angForm.controls['Ranking'].invalid && (angForm.controls['Ranking'].dirty || angForm.controls['Ranking'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['Ranking'].errors.required">
+          O Ranking do Jogador é Requisitado!.
+        </div>
+      </div>
+      <div class="form-group">
+        <button (click) = "updateJogador(TagJogador.value, Clan.value, Ranking.value)" type="submit" class="btn btn-primary"
+        [disabled]="angForm.invalid" >
+          Atualizar o Jogador!
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-let Jogador = new Schema({
+let Jogadores = new Schema({
 	TagJogador:{
 		type: String
 	},
@@ -14,7 +14,7 @@ let Jogador = new Schema({
 	  type: Number
 	}
 },{
-	collection: 'Jogador'
+	collection: 'Jogadores'
 });
 
-module.exports = mongoose.model('Jogador', Jogador);
+module.exports = mongoose.model('Jogadores', Jogadores);

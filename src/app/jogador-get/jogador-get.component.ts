@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import jogador from '../jogador';
+import Jogador from '../jogador';
 import {JogadorService} from '../jogador.service';
 
 @Component({
@@ -9,34 +9,22 @@ import {JogadorService} from '../jogador.service';
 })
 export class JogadorGetComponent implements OnInit {
 
-  angForm: FormGroup;
-  jogador: any = {};
+ 
+  jogadores: Jogador[];
+  constructor(private js: JogadorService){}
 
-  constructor(private route: ActivedRoute, private router: Router, private js: JogadorService,
-  	private fb: FormBuilder) {
-  		this.createForm();
-  	 }
-
-  	 createForm(){
-  	 	this.angForm = this.fb.group({
-  	 		TagJogador:['', Validators.required],
-  	 		Clan: ['',Validators.required],
-  	 		Ranking:['', Validators.required]
-  	 	});
-  	 }
-
+  
   ngOnInit() {
-  	this.route.params.subscribe(params =>{
-  		this.js.editJogador(params:id).subscribe(res =>{
-  			this.jogador = res; 
-  		});
-  	});
+  	this.js
+  	.getJogador()
+  	.subscribe((data: Jogador[]) => {
+  		this.jogadores = data; 
+  	 });
+  	}
 
-  	updateJogador(TagJogador, Clan, Ranking, id){
-  		this.route.params.subscribe(params => {
-  			this.js.updateJogador(TagJogador, Clan, Ranking, params.id);
-  			this.router.navigate(['jogadores']);
+  	deleteJogador(id){
+  		this.js.deleteJogador(id).subscribe(res =>{
+  			this.jogadores.splice(id, 1);
   		});
   	}
   }
-  	

@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const jogadorRoutes = express.Router();
 
-let Jogadores = require('../models/Jogadores');
+let Jogadores = require('../models/Jogador');
 
 jogadorRoutes.route('/add').post(function(req, res){
 	let jogador = new Jogadores(req.body);
@@ -23,7 +23,7 @@ Jogadores.findById(id, function(err, Jogadores){
 jogadorRoutes.route('/update/:id').post(function(req,res){
 	Jogadores.findById(req.params.id, function(err, jogador){
 		if(!jogador)
-			res.status.(404).send("Registro não encontrado");
+			res.status(404).send("Registro não encontrado");
 		else {
 			jogador.TagJogador = req.body.TagJogador;
 			jogador.Clan = req.body.Clan;

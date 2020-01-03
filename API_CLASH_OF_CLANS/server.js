@@ -5,14 +5,12 @@ const express = require('express'),
 	mongoose = require('mongoose');
 	config = require('./DB');
 
-	const jogadorRoute = require('./routes/jogadorRoute');
+	const jogadorRoute = require('./routes/jogador.route');
 	mongoose.Promise = global.Promise;
 	mongoose.connect(config.DB, {useNewUrlParser: true}).then(
 	 () => {console.log('O banco está conectado!')},
 	 err => {console.log('O banco não pode ser conectado' + err)}
 	);
-
-
 
 	const app = express();
 	app.use(bodyParser.json());
