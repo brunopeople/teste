@@ -25,3 +25,20 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Trazendo a API para a Aplicação 
+
+Rode o código `npm install --save clash-of-clans-api` 
+
+##Instalando o Boostrap
+
+Rode o código no prompt de comando `npm install bootstrap --save` em seguida importe o arquivo boostrap.min.css para o arquivo angular.json.
+
+## Instalando os Indicadores de Progresso de Rotas
+
+Rode o código no prompt de comando `npm install g2-slim-loading-bar --save` e `npm install rxjs-compat --save`
+
+## Instalando o Nodemon Server
+
+Rode o código no prompt do Node.js `npm init -y` em seguida para que o servidor reconheça as mudanças com o arquivo server.js temos que 
+instalar o nodemon, então rode o `npm install nodemon --save-dev` e um módulo especifico, `npm install express body-parser cors mongoose --save`.
